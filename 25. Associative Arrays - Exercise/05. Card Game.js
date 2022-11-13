@@ -126,7 +126,4 @@ cardGame(
     ]
 );
 
-
-
-
-  //console.log(JSON.stringify(players));
+//console.log(JSON.stringify(players));
