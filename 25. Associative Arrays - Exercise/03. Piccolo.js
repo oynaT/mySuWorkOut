@@ -19,11 +19,13 @@ function piccolo(array) {
     let parkList = {};
 
     let fullList = array.map(el => el.split(', '));
+    console.log(fullList);
 
     for (const el of fullList) {
 
         let status = el[0];
         let carNumber = el[1];
+        console.log(carNumber);
 
         if(status === 'IN'){
             parkList[carNumber] = [status];
