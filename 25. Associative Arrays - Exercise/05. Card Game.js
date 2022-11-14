@@ -103,9 +103,7 @@ cardGame([
     'Andrea: QH, QC, JS, JD, JC',
 ]);
 cardGame(
-    [
-
-        'John: 2C, 4H, 9H, AS, QS',
+    [   'John: 2C, 4H, 9H, AS, QS',
 
         'Slav: 3H, 10S, JC, KD, 5S, 10S',
 
@@ -122,8 +120,6 @@ cardGame(
         'Thomas: QH, QC, JS, JD, JC',
 
         'John: JD, JD, JD, JD'
-
-    ]
-);
+    ]);
 
 //console.log(JSON.stringify(players));
