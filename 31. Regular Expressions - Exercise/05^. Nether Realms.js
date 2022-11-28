@@ -1,3 +1,5 @@
+//https://pastebin.com/XHPUQLA1
+
 function netherRealms(input) {
 
     let splitPattern = /\s*,\s*/g; ///[, ]+/g
@@ -14,6 +16,7 @@ function netherRealms(input) {
 
         let hp = 0;
         let dmg = 0;
+
         if (demon.match(healthPattern) != null) {
             for (const char of demon.match(healthPattern)) {
                 hp += char.charCodeAt(0);
@@ -27,8 +30,8 @@ function netherRealms(input) {
         }
 
         if (demon.match(dmgPattern) != null) {
-            for (const damage of demon.match(dmgPattern)) {
-                if (damage == '*') {
+            for (const operation of demon.match(dmgPattern)) {
+                if (operation == '*') {
                     dmg *= 2;
                 } else {
                     dmg /= 2;
@@ -36,15 +39,22 @@ function netherRealms(input) {
             }
         }
         demons[demon] = [hp, dmg];
+        //demons[demon] = {};
+        //demons[demon]['health'] = hp;
+        //demons[demon]['damage'] = dmg;
 
     }
-    let sortedDenons = Object.entries(demons).sort((a, b) => a[0].localeCompare(b[0]));
-    for (const [name, stats] of sortedDenons) {
+    let sortedDemons = Object.entries(demons).sort((a, b) => a[0].localeCompare(b[0]));
+    for (const [name, stats] of sortedDemons) {
         console.log(`${name} - ${stats[0]} health, ${(stats[1]).toFixed(2)} damage`);
 
     }
 }
-
 netherRealms('Gos/ho');
 //netherRealms('M3ph-0.5s-0.5t0.0**');
 //netherRealms('M3ph1st0**, Azazel');
+
+
+
+
+

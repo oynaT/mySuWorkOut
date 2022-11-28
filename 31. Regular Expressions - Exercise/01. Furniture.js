@@ -1,11 +1,11 @@
 function furniture(input) {
-    let pattern = /[>]{2}(?<type>[A-Za-z]+)[<]{2}(?<price>[\d]+[\.]*[\d]+)!(?<quantity>[\d]+)/gm;
+    let pattern = /[>]{2}(?<type>[A-Za-z]+)[<]{2}(?<price>[\d]+[\.]*[\d]+)!(?<quantity>[\d]+)/g;
     let totalMoney = 0;
     let command = input.shift();
     console.log('Bought furniture:');
+   
     while (command !== 'Purchase') {
         let currentLine = pattern.exec(command);
-
         if (currentLine) {
             let name = currentLine.groups['type'];
             console.log(name);
